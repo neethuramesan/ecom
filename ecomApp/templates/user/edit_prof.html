@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+        <div class="mask d-flex align-items-center vh-100 ">
+            <div class="container font-weight-bold" style=" font: size 30px;">
+
+                <h4 class="text-uppercase text-center font-weight-bold mb-5">Edit Profile</h4>
+            
+                <form class="was-validated 100vw" action="{% url 'edit_user'%}" method="post" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    
+                    <span class="input-group"  >
+                    <div class="form-group " style="width: 530px; ">
+                
+                        <input type="text" class="form-control " id="fname" placeholder="Enter Firstname" 
+                             name="fname" required value="{{user.first_name}}">
+                        <div class="valid-feedback" >Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="lname" placeholder="Enter Lastname" 
+                             name="lname" required value="{{user.last_name}}">
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                </span>
+                <span class="input-group"  >
+                    <div class="form-group " style="width: 530px; ">
+                        
+                        <input type="text" class="form-control " id="uname" placeholder="Enter username" 
+                             name="uname" required value="{{user.username}}">
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="address" placeholder="Enter Address" 
+                             name="address" value="{{user1.address}}">
+                        
+                    </div>
+                </span>
+                <span class="input-group">
+                    <div class="form-group" style="width: 530px; ">
+                
+                        <input type="text" class="form-control " id="c_num" placeholder="Enter Contact Number" 
+                             name="c_num" value="{{user1.c_num}}">
+                        
+                    </div>
+
+
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="email" placeholder="Enter your email" 
+                            name="email" required value="{{ user.email}}">
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </span>
+                    <div class="form-group" style="width: 1080px;">
+                
+                        {% if p.profile_pic %}
+                            <img src="{{ p.profile_pic.url }}" style=" width :80px;height: 80px;">
+                        
+                        {% endif %}
+        
+                        <input type="file" name="file" class="form-control mt-3"  accept="image/*">
+                        
+                    </div>
+
+                   <button type="submit" 
+                    class="btn btn-block text-align-center font-weight-bold mb-5" 
+                    style="margin-left: 400px; width : 300px; background-color: rgb(114, 94, 119); color: antiquewhite;">
+                        Register</button>
+                        
+
+                    
+
+                </form>
+                
+                
+            </div>
+        </div>
+
+
+{% endblock %}

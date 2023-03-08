@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+
+            body{
+                background-image: url('https://www.indy100.com/media-library/the-93-best-online-clothing-stores-in-the-us.jpg?id=28041069&width=1245&quality=85&coordinates=0%2C201%2C0%2C201&height=700');
+                background-attachment: fixed;
+                /*background-image: url('https://img.freepik.com/free-photo/black-friday-elements-assortment_23-2149074076.jpg?w=2000');*/
+                background-position: center;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+            }
+
+            .gradient-custom-4 {
+                text-align: center;
+                background: linear-gradient(to right, rgba(132, 250, 176, .8), rgba(143, 211, 244,.8));
+                margin-bottom: 5px;
+            }
+
+            .container
+            {
+                background-color: rgba(117, 112, 112, 0.6);
+                margin: 150px 24px 25px 70px;
+                border-radius: 15px;
+                padding: 30px;
+            }
+            a{
+                color: rgb(68, 211, 135);
+            }
+
+            .navbar{
+            justify-content:space-between;
+            padding: 5px;
+            background-color: rgba(150, 150, 197, 0.2);
+            
+          }
+        .nav-link{
+            
+            margin-right: 60px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(239, 237, 247);
+        }
+        .logo{
+            color: rgb(112, 105, 76);
+            font-family: Comic Sans;
+            font-size: 35px; 
+            margin-left: 30px;
+            font-style:oblique;
+            
+        }
+ 
+        </style>
+
+    </head>
+
+    <body>
+
+        <!--Navigation bar-->
+        <nav class="navbar navbar-expand-sm">
+
+          <div class = "logo">
+             <a style ="text-decoration: none;" href="{% url 'home' %}"><strong>LOGO</strong></a>
+           </div>
+                 
+           <!-- Links -->
+           <ul class="navbar-nav ">
+             <li class="nav-item">
+               <a class="nav-link" href="{% url 'home' %}">Home</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="{% url 'login' %}">
+                 LogIn</a>
+               
+            </li>
+           
+             <li class="nav-item">
+               <a class="nav-link" href="{% url 'usercreate' %}">Registration</a>
+             </li>
+  
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" >
+                  Catrgories
+                </a>
+                <div class="dropdown-menu" >
+                  <a class="dropdown-item" href="{% url 'all_prod' %}">All Products</a>
+                  <a class="dropdown-item" href="{% url 'women' %}">Women</a>
+                  <a class="dropdown-item" href="{% url 'men' %}">Men</a>
+                  <a class="dropdown-item" href="{% url 'kids' %}">Kids</a>
+        
+                </div>
+              </li>
+
+             <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">
+                <i class="fa fa-shopping-cart" style="font-size:25px;" aria-hidden="true"></i></a>
+            </li>
+             
+           </ul>
+      </nav> 
+
+        <div class="mask d-flex align-items-center vh-100 ">
+            <div class="container font-weight-bold" style=" font: size 30px; margin-top: 200px;">
+
+                <h4 class="text-uppercase text-center font-weight-bold mb-5">create an account</h4>
+            
+                <form class="was-validated 100vw" action="{% url 'usercreate' %}" method="post" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    
+                    <span class="input-group"  >
+                    <div class="form-group " style="width: 530px; ">
+                
+                        <input type="text" class="form-control " id="fname" placeholder="Enter Firstname" 
+                             name="fname" required >
+                        <div class="valid-feedback" >Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="lname" placeholder="Enter Lastname" 
+                             name="lname" required >
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                </span>
+                <span class="input-group"  >
+                    <div class="form-group " style="width: 530px; ">
+                        
+                        <input type="text" class="form-control " id="uname" placeholder="Enter username" 
+                             name="uname" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="address" placeholder="Enter Address" 
+                             name="address" >
+                        
+                    </div>
+                </span>
+                <span class="input-group">
+                    <div class="form-group" style="width: 530px; ">
+                
+                        <input type="text" class="form-control " id="c_num" placeholder="Enter Contact Number" 
+                             name="c_num" >
+                        
+                    </div>
+
+
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="text" class="form-control " id="email" placeholder="Enter your email" 
+                            name="email" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </span>
+                    <div class="form-group">
+                
+                        <input type="file" class="form-control " name="file" >
+                        
+                    </div>
+
+                    <span class="input-group" >
+                    <div class="form-group" style="width: 530px; ">
+                
+                        <input type="password" class="form-control " id="pwd" placeholder="Enter password" 
+                            name="pswd" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                    <div class="form-group" style="width: 530px; margin-left :20px ;">
+                
+                        <input type="password" class="form-control " id="cpwd" placeholder="Confirm password" 
+                            name="cpswd" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    </span>
+                    <div class="form-group form-check">
+                        <label class="form-check-label" style="color: azure ;">
+                            <input class="form-check-input" type="checkbox" name="agree" required> 
+                                I agree on <a href="#" >Terms of services</a>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Check this checkbox to continue.</div>
+                        </label>
+                    </div>
+        
+                    <button type="submit" 
+                    class="btn btn-block gradient-custom-4 text-body text-align-center font-weight-bold mb-5" 
+                    style="margin-left: 400px; width : 300px;">
+                        Register</button>
+
+                    
+
+                </form>
+                
+                <div class="mb-3 "  style="margin-left: 430px; color: rgb(42, 45, 45);" >
+                    <label for ="account1">Already Have an Account?</label>
+        
+                    <a class = "signin" href="{% url 'login' %}" style="color:rgb(217, 218, 218) ;">Login</a>
+                    </div>
+                    
+
+            </div>
+        </div>
+
+        
+
+    </body>
+</html>

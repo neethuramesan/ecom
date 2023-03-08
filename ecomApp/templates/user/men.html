@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+
+
+    <h2 class="text-center p-2 my-2" style="color: rgba(80, 93, 108);"> 
+        Women</h2>
+
+        
+     
+        <div class="card-deck ml-2 pt-3  pl-4 pr-4 pb-2" >
+
+            {% for p in product %}
+
+              <div class="card img-fluid">
+                {% if p.image %}
+                <img src="{{ p.image.url }}" alt="{{ p.prod_name }}" style=" width :auto;height: 230px;border-radius: 15px;">
+                {% else %}
+                <img src="{% static 'images/noproduct.png' %}"  style=" width: auto;height: 230px;border-radius: 15px;" >
+                {% endif %}
+              <div class="card-body p-2 text-center">
+                <h6 class="card-title">{{ p.prod_name }}</h6>
+                <p class="card-text">{{ p.description }}</p>
+
+                <p class="card-text"><b>₹ {{ p.price }}</b></p>
+                  <a href = "{% url 'add_cart' p.id %}"
+                   target="_blank" class="stretched-link"></a>
+                  <a href="{% url 'add_cart' p.id %}"
+                  class="btn text-center " role="button">Add Cart</a>
+              </div>
+            </div>
+              {% if forloop.counter|divisibleby:5 %}
+      </div>
+            <div class="card-deck ml-2 pt-3  pl-4 pr-4 pb-2">
+          {% endif %}
+          {% endfor %}
+      </div>
+
+
+
+{% endblock %}
