@@ -1,0 +1,312 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<!--Carousal-->
+<div id="items" class="carousel slide mb-3" data-ride="carousel">
+ 
+    <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#items" data-slide-to="0" class="active"></li>
+    <li data-target="#items" data-slide-to="1"></li>
+    <li data-target="#items" data-slide-to="2"></li>
+    <li data-target="#items" data-slide-to="3"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{% static 'images\banner\1.avif' %}" 
+
+      alt="Los Angeles" class="img-fluid">
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'images\banner\2.webp' %}" 
+      alt="Chicago"class="img-fluid">  
+      </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'images\banner\3.avif' %}" 
+      alt="New York" class="img-fluid">
+    </div>
+
+    <div class="carousel-item">
+        <img src="{% static 'images\banner\4.avif' %}" 
+
+        alt="New York" class="img-fluid">
+      </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#items" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#items" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+
+<!--Featured Products-->
+
+<h3 class="text-uppercase text-center pt-4"> Featured Products</h3>
+
+
+<div class="feature card-deck ml-2 pt-3 pl-4 pr-4 pb-2" >
+
+    <div class="card img-fluid" >
+      <img class="card-img-top" 
+      src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/u/l/ulss19tp09-37-744-1_fe60f89e.jpg?rnd=20200526195200" 
+      alt="Uptownie Lite" style="width:100%; border-radius: 15px;">
+      <div class="card-body p-4">
+        <h6 class="card-title">Uptownie Lite</h6>
+        <p class="card-text"><b>₹ 495</b></p>
+        <a href = "{% url 'login' %}"
+         target="_blank" class="stretched-link"></a>
+        <a href="{% url 'login' %}"
+        class="btn text-center ">Add Cart</a>
+      </div>
+    </div>
+
+    <div class="card img-fluid" >
+        <img class="card-img-top" src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/2/8/28da532RHP1024_1.jpg?rnd=20200526195200" 
+        alt="Red Tape" style="width:100%; border-radius: 15px;">
+        <div class="card-body p-4">
+          <h6 class="card-title">Red Tape</h6>
+          <p class="card-text"><b>₹ 720</b></p>
+          <a href = "{% url 'login' %}"
+          target="_blank" class="stretched-link"></a>
+           <a href="{% url 'login' %}"
+           class="btn text-center ">Add Cart</a>
+        </div>
+      </div>
+
+      <div class="card img-fluid" >
+        <img class="card-img-top" src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/u/d/udjeno0125_1_b711fb07.jpg?rnd=20200526195200" 
+        alt="U.S. POLO ASSN." style="width:100%; border-radius: 15px;">
+        <div class="card-body p-4">
+          <h6 class="card-title">U.S. POLO ASSN.</h6>
+          <p class="card-text"><b>₹ 1,260</b></p>
+          <a href = "{% url 'login' %}"
+           target="_blank" class="stretched-link"></a>
+
+          <a href="{% url 'login' %}"
+          class="btn text-center ">Add Cart</a>
+        </div>
+      </div>
+
+      <div class="card img-fluid" >
+        <img class="card-img-top" src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/6/0/60940d6NFJK_NYFJPKR004353_1.jpg?rnd=20200526195200" 
+        alt="Jaipur Kurti" style="width:100%; border-radius: 15px;">
+        <div class="card-body p-4">
+          <h6 class="card-title">Jaipur Kurti</h6>
+          <p class="card-text"><b>₹ 975</b></p>
+          <a href = "{% url 'login' %}"
+          target="_blank" class="stretched-link"></a>
+
+          <a href="{% url 'login' %}"
+          class="btn text-center ">Add Cart</a>
+        </div>
+      </div>
+
+      <div class="card img-fluid" >
+        <img class="card-img-top" src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/e/9/e9ef7a1WS-PDRS-6061BL_1.jpg?rnd=20200526195200" 
+        alt="CHERRY CRUMBLE" style="width:100%; border-radius: 15px;">
+        <div class="card-body p-4">
+          <h6 class="card-title">Cherry Crumble </h6>
+          <p class="card-text"><b>₹ 2,640</b></p>
+          <a href = "{% url 'login' %}"
+          target="_blank" class="stretched-link"></a>
+
+          <a href="{% url 'login' %}"
+           class="btn text-center ">Add Cart</a>
+        </div>
+      </div>
+    </div>
+
+ <!-- Banner-->   
+  <div class="container-fluid m-3">
+
+    <img src="https://images-static.nykaa.com/uploads/tr:w-2526,/4fd0da19-e4cf-4772-b275-36a59367da02.jpg"
+     alt="banner"width=100%>
+
+  </div>
+
+  <!--New Arrivals-->
+
+  <h3 class="text-uppercase text-center pt-4 mb-4"> New Arrivals</h3>
+
+<div class="arrivals card-deck m-2">
+
+ <div class="card img-fluid">
+  <img class="card-img-top" 
+ src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/0/4/048ba69VASMK103CH_1.jpg?rnd=20200526195200" 
+  alt="Vastramay" style="width:100%; border-radius: 15px;">
+  <div class="card-img-overlay">
+   
+    <h4 class="card-title">Vastramay</h4>
+    <p class="card-text">Men's Chiku And Rose Gold Kurta</p>
+    <p><b>₹ 1,199</b></p>
+    <a href="{% url 'login' %}" class="stretched-link"></a>
+    <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width: 300px">
+  <img class="card-img-top" 
+  src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/e/2/e2a816dCDR00452_1.jpg?rnd=20200526195200" 
+  alt="Faballey" style="width:100% ;border-radius: 15px;">
+  <div class="card-img-overlay">
+   
+    <h4 class="card-title">Faballey</h4>
+    <p class="card-text">Peach Floral Smocked Waist Tiered Maxi</p>
+    <p><b>₹ 1,400</b></p>
+    <a href="{% url 'login' %}" class="stretched-link"></a>
+    <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+<div class="card img-fluid" style="width:300px">
+  <img class="card-img-top" 
+  src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/8/2/82baa25RO6213FASH0BLUE_1.jpg?rnd=20200526195200" 
+  alt="Zivame" style="width:100%; border-radius: 15px;">
+  <div class="card-img-overlay">
+    <h4 class="card-title">Zivame</h4>
+    <p class="card-text">Rosaline Dream Land Relaxed Fit Poly Cotton Pyjama Set - Ocean Cavern</p>
+    <p><b>₹ 779</b></p>
+    <a href="{% url 'login' %}" class="stretched-link"></a>
+    <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/5/3/53bfed0JE-6035_1.jpg?rnd=20200526195200" 
+    alt="Jeetethnics" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Jeetethnics</h4>
+      <p class="card-text">Boys Grey Checked Suit set</p>
+      <p><b>₹ 2,120</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class=" card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/b/1/b1ebbc5T9536-RED_1.jpg?rnd=20200526195200" 
+    alt="98 Degree North" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+     
+      <h4 class="card-title">98 Degree North</h4>
+      <p class="card-text">Half Sleeves Polo Striper T-shirt</p>
+      <p><b>₹ 874</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+  </div>
+  </div>
+  </div>
+
+  <div class =" arrivals card-deck m-2">
+
+    <div class="card img-fluid" style="width: 300px">
+  <img class="card-img-top" 
+  src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/f/f/ff4d5f8M36-JIFFYJOGGER-BLUE-MEL-P1_1.jpg?rnd=20200526195200" 
+  alt="Dixcy Scott" style="width:100%; border-radius: 15px;">
+  <div class="card-img-overlay">
+   
+    <h4 class="card-title">Dixcy Scott</h4>
+    <p class="card-text">Mens Stylish Solid Jogger.</p>
+      <p><b>₹ 729</b></p>
+    <a href="{% url 'login' %}" class="stretched-link"></a>
+    <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/c/5/c58a82aBS22IW18ORA_2.jpg?rnd=20200526195200" 
+    alt="BownBee" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+      <h4 class="card-title">BownBee</h4>
+      <p class="card-text">Cotton Top Harem For Girls- Orange</p>
+      <p><b>₹ 1,599</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/0/0/00e851fEP1211_1.jpg?rnd=20200526195200" 
+    alt="RARE" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+      <h4 class="card-title width:100%">RARE</h4>
+      <p class="card-text">Navy Blue Solid Top</p>
+      <p><b>₹ 600</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/6/e/6ee0024A_1118-Purple_1.jpg?rnd=20200526195200"
+     alt="Aaheli" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Aaheli</h4>
+      <p class="card-text">Purple Printed Handwork Kurta With Pant</p>
+        <p><b>₹ 1,285</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+    </div>
+  </div>
+
+  <div class="card img-fluid" style="width:300px">
+    <img class="card-img-top" 
+    src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-960,/pub/media/catalog/product/4/8/489dff7LYSHR413_1.jpg?rnd=20200526195200" 
+    alt="Luyk" style="width:100%; border-radius: 15px;">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Luyk</h4>
+      <p class="card-text">Blue Floral Shrug</p>
+      <p><b>₹ 650</b></p>
+      <a href="{% url 'login' %}" class="stretched-link"></a>
+      <a href="{% url 'login' %}" class="btn text-center ml-4 " style="color: antiquewhite;">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Images-->
+
+  <div class="card-deck m-5">
+
+    <div class="card img-fluid">
+     <img class="card-img-top" 
+    src="https://img.freepik.com/free-photo/curly-woman-jumping-purple-background-young-cheerful-girl-green-skirt-pink-sweater-looks-away-isolated_197531-29640.jpg?size=626&ext=jpg&ga=GA1.2.92004949.1656874959" 
+     alt="Vastramay" style="width:100%; border-radius: 15px;">
+     <div class="card-img-overlay" style="color:antiquewhite;">
+        <h5 class="card-title">Midweek SALE</h5>
+        <p class="card-text">Min 50% Off</p>
+        <a href="#" class="btn  text-center ml-0 " style="color: antiquewhite; background-color: rgba(83, 147, 145, 0.5);">Explore </a>
+       
+       </div>
+     </div>
+
+     <div class="card img-fluid">
+      <img class="card-img-top" 
+     src="https://t4.ftcdn.net/jpg/02/21/02/35/240_F_221023532_H6DGni8FFshOrHFxK5kvLSVixYmjlMet.jpg" 
+      alt="Vastramay" style="width:100% ;border-radius: 15px;">
+      <div class="card-img-overlay">
+        <p class="card-title"><b>Carzy Deals</b></p>
+        <h3 class="card-text">Buy 1 Get 1 Free</h3>
+        <a href="#" class="btn text-center ml-0 " style="color: antiquewhite; background-color: rgba(108, 95, 139, 0.5);">Learn More</a>
+        
+        </div>
+      </div>
+  </div>
+
+  
+
+  {% endblock %}

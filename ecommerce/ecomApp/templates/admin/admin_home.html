@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% load static %}
+
+<div class = "container my-3 " style="background-color: rgb(227, 197, 209);;">
+
+<div class="row " >
+    <div class="col-2 text-center" style="background-color: rgba(226, 241, 241, 0.413);;">
+<ul id = sidebar style="list-style-type: none ; font-size: large;">
+    <li style="margin:30px 0 30px 0;">
+        <a href="{% url 'admin_home' %}" ><b>Dashboard</b> </a>
+    </li>
+    <li style="margin:30px 0 30px 0;">
+        <a href="{% url 'add_category' %}" ><b>Add Category</b> </a>
+    </li>
+    <li style="margin:0 0 30px 0;">
+        <a href="{% url 'add_product' %}" ><b>Add Product</b> </a>
+    </li>
+
+    <li style="margin:0 0 30px 0;">
+        <a href="{% url 'show_prod' %}" ><b>Show Product</b> </a>
+    </li>
+
+    <li style="margin:0 0 30px 0;">
+        <a href="{% url 'show_user' %}"><b>User Details</b> </a>
+    </li>
+</ul>
+</div>
+
+<div class="col">
+
+    <div class="container">
+        <h1 class="text-center p-5">Admin Home</h1>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

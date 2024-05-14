@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "container my-3 " style="background-color: rgb(227, 197, 209);;">
+
+    <div class="row " >
+        <div class="col-2 text-center" style="background-color: rgba(226, 241, 241, 0.413);;">
+    <ul id = sidebar style="list-style-type: none ; font-size: large;">
+        <li style="margin:70px 0 30px 0;">
+            <a href="{% url 'admin_home' %}" ><b>Dashboard</b> </a>
+        </li>
+        <li style="margin:30px 0 30px 0;">
+            <a href="{% url 'add_category' %}" ><b>Add Category</b> </a>
+        </li>
+        <li style="margin:0 0 30px 0;">
+            <a href="{% url 'add_product' %}" ><b>Add Product</b> </a>
+        </li>
+    
+        <li style="margin:0 0 30px 0;">
+            <a href="{% url 'show_prod' %}" ><b>Show Product</b> </a>
+        </li>
+    
+        <li style="margin:0 0 30px 0;">
+            <a href="{% url 'show_user' %}"><b>User Details</b> </a>
+        </li>
+    </ul>
+    </div>
+
+        <div class="col">
+    <h2  class = 'text-center mb-3 p-1 my-2' style="margin-top: 80px;color: rgba(80, 93, 108);">
+       Add Product</h2>
+    
+        <form action="{% url 'add_product' %}" method='post' enctype="multipart/form-data">
+
+        {% csrf_token %}            
+        
+          <input type="text" class="form-control mb-3 mt-3" name = 'product' placeholder="Add Product">
+          
+          <input type="text" class="form-control mb-3 mt-3" name = 'desc' placeholder="Description">
+
+          <select class="form-control mb-3 mt-3"name = 'cat'>
+
+            <option type="text"   > Select Category</option>
+            {% for cat in categories %}
+          
+            <option type="text"  value = '{{cat.id}}' > {{cat.cat_name}} </option>
+
+            {% endfor %}
+
+          </select>
+          <input type="number" class="form-control mb-3 mt-3" name = 'price' placeholder="Price">
+          <input type="file" class="form-control mb-3 mt-3" name = 'file' >
+
+         
+          <button type="submit" class="btn  text-align-center font-weight-bold  my-5" 
+                  style="width: 200px;  margin-left: 350px; background-color:#172d46; color: azure;"> 
+                  SAVE</button>
+        </form>
+ </div>
+    {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container log mt-3"  >
+
+    
+<form class="was-validated 100vw p-3 " action="{% url 'login' %}" method='post' >
+                    
+    {% csrf_token %}
+
+    <h3 style="margin-left: 500px;"> Login</h3>
+
+      <div class="form-group  font-weight-bold" style="margin-left: 270px;">
+  
+          <input type="text" class="form-control mt-5" id="uname" placeholder="Enter Username/Email" 
+               name="uname" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback" >Please fill out this field.</div>
+      </div>
+
+      <div class="form-group font-weight-bold" style="margin-left: 270px;">
+  
+          <input type="password" class="form-control " id="pwd" placeholder="Enter password" 
+              name="pswd" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+      <div class="form-group form-check">
+          <label class="form-check-label" style="color: azure ;">
+              <input class="form-check-input" type="checkbox" name="rem"> 
+                  Remember Me</label>
+      </div>
+
+      <button type="submit" class="btn btn-dark btn-block text-uppercase text-shadow" 
+      style="margin: 10px 0px 0px 400px; width: 300px; color: black;"><b>Login</b></button>
+
+      
+
+    
+
+  </form>
+
+</div> 
+
+<div class="bottom-container mb-3">
+<div class="row" 
+        style="text-align: center;background-color: rgba(108, 144, 192, 0.5);border-radius: 0px 0px 10px 10px ; 
+        width: 1140px; margin-left: 70px;">
+    <div class="col" >
+      <a href="{% url 'usercreate' %}" class="btn font-weight-bold " style="font-size:large ;">Signup</a>
+    </div>
+    <div class="col" >
+      <a href="#" class="btn font-weight-bold" style="font-size:large; ">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

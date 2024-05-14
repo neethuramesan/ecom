@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+<div class = "container my-3 " style="background-color: rgb(227, 197, 209);;">
+
+  <div class="row " >
+      <div class="col-2 text-center" style="background-color: rgba(226, 241, 241, 0.413);;">
+  <ul id = sidebar style="list-style-type: none ; font-size: large;">
+      <li style="margin:30px 0 30px 0;">
+          <a href="{% url 'admin_home' %}" ><b>Dashboard</b> </a>
+      </li>
+      <li style="margin:30px 0 30px 0;">
+          <a href="{% url 'add_category' %}" ><b>Add Category</b> </a>
+      </li>
+      <li style="margin:0 0 30px 0;">
+          <a href="{% url 'add_product' %}" ><b>Add Product</b> </a>
+      </li>
+  
+      <li style="margin:0 0 30px 0;">
+          <a href="{% url 'show_prod' %}" ><b>Show Product</b> </a>
+      </li>
+  
+      <li style="margin:0 0 30px 0;">
+          <a href="{% url 'show_user' %}"><b>User Details</b> </a>
+      </li>
+  </ul>
+  </div>
+
+    <div class="col">
+    <h2 class="text-center p-2 my-2" style="background-color : rgba(80, 93, 108); color: azure;"> 
+        User Details</h2>
+
+    <table class="table table-striped" style="background-color: aliceblue;">
+
+      <thead class = "mt-3 p-1" style="background-color: rgb(76, 68, 68); color:azure;">
+        <tr>
+          
+          <th>USER NAME</th>
+          <th>ADDRESS</th>
+          <th>CONTACT NUMBER</th>
+          <th>EMAIL ID </th>
+          <th>PROFILE PHOTO</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+
+      <tbody class="font-weight-bold">
+        
+            {% for p in member %}
+        <tr>
+            <td> 
+              {{ p.user.first_name }} {{ p.user.last_name }}</td>
+            <td>{{ p.address }}</td>
+            <td>{{ p.contact_num }}</td>
+            <td>{{ p.user.email }}</td>
+            <td>
+                {% if p.profile_pic %}
+                <img src="{{ p.profile_pic.url }}" class="rounded-circle" style=" width :80px;height: 80px;">
+                {% else %}
+                <img src="{% static 'images/download.png' %}"  class="rounded-circle" style=" width :80px;height: 80px;" >
+                {% endif %}
+              </td>
+            <td>
+            <a href='/del_user/{{ p.id }}'>DELETE</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+    </div>
+</div>
+
+{% endblock %}
